@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Put, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Put,
+  Delete,
+  Param,
+  Body,
+} from '@nestjs/common';
 
 @Controller('v1/customers')
 export class CustomerController {
@@ -6,16 +14,22 @@ export class CustomerController {
   get() {
     return 'get clients list';
   }
+
+  @Get(':id')
+  getBtId(@Param('id') id) {
+    return 'get clients list' + id;
+  }
+
   @Post()
-  post() {
-    return 'create a new client';
+  post(@Body() body) {
+    return body;
   }
-  @Put()
-  put() {
-    return 'update a client';
+  @Put(':id')
+  put(@Param('id') id, @Body() body) {
+    return { customer: id, data: body };
   }
-  @Delete()
-  delete() {
-    return 'delete a client';
+  @Delete(':id')
+  delete(@Param('id') id) {
+    return 'client ' + id + ' deleted';
   }
 }
