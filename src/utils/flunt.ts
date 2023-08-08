@@ -1,5 +1,5 @@
 export class Flunt {
-  constructor(public errors: any[] = []) {}
+  constructor(public errors: string[] = []) {}
 
   isRequired(value, message) {
     if (!value || value.length <= 0) {
@@ -18,7 +18,7 @@ export class Flunt {
     }
   };
   isFixedLen = (value, len, message) => {
-    if (value.length !== len) {
+    if (value === undefined || value.length !== len) {
       this.errors.push(message);
     }
   };
