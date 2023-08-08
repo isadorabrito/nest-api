@@ -18,7 +18,7 @@ export class CustomerController {
   }
 
   @Get(':id')
-  getBtId(@Param('id') id) {
+  getBtId(@Param('id') id: string) {
     return new Result(null, true, {}, null);
   }
 
@@ -31,7 +31,7 @@ export class CustomerController {
     return new Result('client updated!', true, body, null);
   }
   @Delete(':id')
-  delete(@Param('id') id) {
+  delete(@Param('id') id: string) {
     return new Result('client deleted!', true, null, null);
   }
 }
