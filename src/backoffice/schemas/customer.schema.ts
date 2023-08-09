@@ -5,7 +5,7 @@ export const CustomerSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  id: {
+  document: {
     type: String,
     required: true,
     trim: true,

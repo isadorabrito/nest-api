@@ -20,8 +20,8 @@ export class CustomerController {
     return new Result(null, true, [], null);
   }
 
-  @Get(':id')
-  getBtId(@Param('id') id: string) {
+  @Get(':document')
+  getBtId(@Param('document') document: string) {
     return new Result(null, true, {}, null);
   }
 
@@ -30,12 +30,12 @@ export class CustomerController {
   post(@Body() body: Customer) {
     return new Result('client created!', true, body, null);
   }
-  @Put(':id')
-  put(@Param('id') id, @Body() body) {
+  @Put(':document')
+  put(@Param('document') document, @Body() body) {
     return new Result('client updated!', true, body, null);
   }
-  @Delete(':id')
-  delete(@Param('id') id: string) {
+  @Delete(':document')
+  delete(@Param('document') document: string) {
     return new Result('client deleted!', true, null, null);
   }
 }
